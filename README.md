@@ -1,16 +1,12 @@
-Pushes stuff to S3 buckets with s3cmd
+Dead-simple Ubuntu docker container that contains only s3cmd v2.0.2
 
 https://hub.docker.com/repository/docker/shukriadams/s3cmd
 
-## use
+## Use
+
+Run any s3cmd, egs, upload things to Linode
 
     docker run \
-        -e AWS_REGION=myregion \ 
-        -e AWS_BUCKET=mybucket \ 
-        -e AWS_ACCESS_KEY_ID=mykey \
-        -e AWS_SECRET_ACCESS_KEY=mysecret \ 
-        -e UPLOAD_PATH=some/path \
-        -v some/path:/usr/upload \
-        shukriadams/s3cmd:0.0.1
-        
-The file or folder /some/path will be uploaded to s3 nested @ UPLOAD_PATH within the given bucket.
+        -v $(pwd)/some/path:/tmp/upload \
+        shukriadams/s3cmd:0.0.1 \
+        bash -c "s3cmd sync /tmp/upload s3://mybucket/ --host=eu-central-1.linodeobjects.com --host-bucket=mybucket --access_key=mykey --secret_key=mysecret"
