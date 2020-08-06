@@ -27,10 +27,10 @@ if [ -z $UPLOAD_PATH ]; then
     exit 1;
 fi
 
-
+# if directory, else file
 if [ -d /usr/upload ]; then
-    s3cmd sync /usr/upload s3://$AWS_BUCKET/$UPLOAD_PATH/
+    s3cmd sync /usr/upload s3://$AWS_BUCKET/$UPLOAD_PATH/ --host=$AWS_REGION --host-bucket=$AWS_BUCKET --access_key=$AWS_ACCESS_KEY_ID --secret_key=$AWS_SECRET_ACCESS_KEY
 elif [ -f /usr/upload ]; then
-    s3cmd sync /usr/upload s3://$AWS_BUCKET/$UPLOAD_PATH
+    s3cmd sync /usr/upload s3://$AWS_BUCKET/$UPLOAD_PATH --host=$AWS_REGION --host-bucket=$AWS_BUCKET --access_key=$AWS_ACCESS_KEY_ID --secret_key=$AWS_SECRET_ACCESS_KEY
 fi
 
