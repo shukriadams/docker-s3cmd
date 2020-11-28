@@ -1,4 +1,4 @@
-Dead-simple Ubuntu docker container that contains only s3cmd
+Dead-simple Ubuntu docker container with only `s3cmd`. Use this if you want to run s3cmd but don't have time to figure out which magical incantation is needed to get it to run this time.
 
 https://hub.docker.com/repository/docker/shukriadams/s3cmd
 
@@ -13,4 +13,4 @@ Run any s3cmd, egs, upload things to Linode
 
 ## Tags
 
-Container tags now follow [s3cmd](https://github.com/s3tools/s3cmd/releases) project tags (minus the leading "v")
+Container tags follow [s3cmd](https://github.com/s3tools/s3cmd/releases) tags (minus the leading "v")
