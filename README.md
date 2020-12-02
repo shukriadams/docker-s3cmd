@@ -1,4 +1,4 @@
-Dead-simple Ubuntu docker container with only `s3cmd`. Use this if you want to run s3cmd but don't have time to figure out which magical incantation is needed to get it to run this time.
+Dead-simple docker container with only `s3cmd`. Use this if you want to run s3cmd but don't have time to figure out which magical incantation is needed to get it to run this time.
 
 https://hub.docker.com/repository/docker/shukriadams/s3cmd
 
